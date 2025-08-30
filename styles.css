@@ -1,0 +1,69 @@
+:root{
+  --bg: #0f172a;
+  --panel: #111827ee;
+  --ink: #e5e7eb;
+  --muted: #94a3b8;
+  --brand: #22d3ee;
+  --accent:#a78bfa;
+  --danger:#ef4444;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background: radial-gradient(1200px 800px at 20% -10%, #1f2937 10%, transparent 60%),
+  radial-gradient(1200px 800px at 120% 10%, #1e3a8a 0%, transparent 50%), var(--bg);
+  color:var(--ink); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Noto Sans', Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  display:flex; align-items:center; justify-content:center; padding:24px;
+}
+.app{width:min(1100px,100%)}
+.header{display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between; margin-bottom:16px}
+.title{font-weight:600; letter-spacing:.5px;}
+.title span{background:linear-gradient(90deg,var(--brand),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.controls{display:flex; gap:8px; flex-wrap:wrap}
+button, select{
+  background:#0b1220; color:var(--ink); border:1px solid #263041; padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600; transition:transform .06s ease, border-color .2s ease, background .2s ease;
+}
+button:hover{border-color:var(--brand)}
+button:active{transform:translateY(1px)}
+button[disabled]{opacity:.5; cursor:not-allowed}
+.pill{background:linear-gradient(180deg,#0b1220 0%, #0a1322 100%);}
+
+.grid{display:grid; gap:16px; grid-template-columns: 1fr 1.3fr;}
+@media (max-width: 900px){ .grid{grid-template-columns:1fr } }
+
+.panel{background:linear-gradient(180deg,#0b1220 0%, #0a1322 100%); border:1px solid #263041; border-radius:20px; padding:18px; box-shadow:0 8px 40px #0006}
+.panel h2{margin:6px 0 12px 0; font-size:1rem; font-weight:600; color:var(--muted)}
+.stage{display:flex; align-items:center; justify-content:center; height:360px}
+svg{max-width:360px; width:100%; height:auto}
+.strike{stroke:#1f2937}
+.line{stroke: #e5e7ebb3; stroke-width:10; stroke-linecap:round; fill:none}
+.part{stroke: var(--danger); stroke-width:10; stroke-linecap:round; fill:none; opacity:0; transition:opacity .25s ease}
+.part.show{opacity:1}
+.word{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; letter-spacing:2px; font-size: clamp(28px, 5.2vw, 44px); margin: 6px 0 2px}
+.slot{min-width:28px; border-bottom:4px solid #2b3447; text-align:center; padding:2px 2px 0 2px}
+.slot.revealed{border-color:#334155; color:#fff}
+.keyboard{display:grid; grid-template-columns:repeat(10, minmax(0,1fr)); gap:8px}
+@media (max-width:520px){.keyboard{grid-template-columns:repeat(8, minmax(0,1fr))}}
+.key{padding:10px 8px; border-radius:12px; border:1px solid #263041; background:#0b1220; font-weight:600}
+.key.good{border-color:#14532d; background:#052e16}
+.key.bad{border-color:#3f1a1a; background:#1a0b0b; text-decoration:line-through}
+.meta{display:flex; gap:16px; align-items:center; justify-content:center; color:var(--muted); margin-top:6px}
+.badge{padding:6px 10px; border-radius:999px; border:1px solid #2a3444; background:#0e1627}
+.badge.ok{border-color:#14532d; color:#86efac}
+.badge.warn{border-color:#3f1a1a; color:#fca5a5}
+.hint{color:#a5b4fc; font-size:.95rem}
+.toast{position:fixed; inset:auto 16px 16px auto; background:#0b1220; border:1px solid #263041; color:var(--ink); padding:10px 14px; border-radius:12px; opacity:0; transform:translateY(8px); transition:all .25s ease; box-shadow:0 8px 30px #0006}
+.toast.show{opacity:1; transform:translateY(0)}
+.modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(2,6,23,.66); backdrop-filter: blur(6px)}
+.modal.show{display:flex}
+.modal-card{width:min(520px,92vw); background:#0b1220; border:1px solid #263041; padding:20px; border-radius:20px; box-shadow:0 10px 40px #000a}
+.modal-card h3{margin-top:0}
+.modal-actions{display:flex; gap:8px; justify-content:flex-end}
+footer{margin-top:16px; text-align:center; color:var(--muted); font-size:.9rem}
+footer a{color:var(--brand)}
+
+
+.imagen1{
+    width:50px;
+    height:50px;
+   } 
